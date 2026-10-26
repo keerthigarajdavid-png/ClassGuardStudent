@@ -1,0 +1,381 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:250px;
+    height:100vh;
+    background:#111827;
+    color:white;
+    padding:25px 15px;
+    position:fixed;
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:35px;
+    font-weight:bold;
+}
+
+.menu-btn{
+    width:100%;
+    border:none;
+    background:transparent;
+    color:#d1d5db;
+    padding:14px;
+    text-align:left;
+    border-radius:10px;
+    margin-bottom:8px;
+    transition:.3s;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.menu-btn i{
+    width:25px;
+}
+
+.menu-btn:hover{
+    background:#4f46e5;
+    color:white;
+}
+
+.menu-btn.active{
+    background:#4f46e5;
+    color:white;
+}
+
+/* Main */
+
+.content{
+    margin-left:250px;
+    padding:35px;
+}
+
+/* Cards */
+
+.card{
+    border:none;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+/* Statistics */
+
+.stat-card{
+    text-align:center;
+    padding:25px;
+}
+
+.stat-card h3{
+    font-size:35px;
+    font-weight:bold;
+}
+
+.stat-card p{
+    margin-top:8px;
+    color:#777;
+    font-size:17px;
+}
+
+.success{
+    background:#d1fae5;
+}
+
+.danger{
+    background:#fee2e2;
+}
+
+/* Form */
+
+.form-select,
+.form-control{
+    border-radius:12px;
+    padding:12px;
+}
+
+/* Buttons */
+
+.btn{
+    border-radius:12px;
+    padding:12px;
+    font-size:17px;
+    font-weight:600;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.sidebar{
+    width:100%;
+    height:auto;
+    position:relative;
+}
+
+.content{
+    margin-left:0;
+    padding:20px;
+}
+
+}
+.timer-card{
+
+    text-align:center;
+
+    padding:25px;
+
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+
+    color:white;
+
+}
+
+.timer-card h2{
+
+    font-size:40px;
+
+    margin-top:15px;
+
+    font-weight:bold;
+
+}
+
+.active-card{
+
+    text-align:center;
+
+    padding:25px;
+
+    background:#ffffff;
+
+}
+
+.active-card h3{
+
+    margin-top:15px;
+
+    font-weight:bold;
+
+    color:#16a34a;
+
+}
+/* ================= LOGIN PAGE ================= */
+
+.login-container{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+
+}
+
+.login-card{
+
+    width:380px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:0 10px 40px rgba(0,0,0,.35);
+
+}
+
+.login-card .logo{
+
+    font-size:60px;
+
+    margin-bottom:15px;
+
+}
+
+.login-card h1{
+
+    color:white;
+
+    margin-bottom:8px;
+
+}
+
+.subtitle{
+
+    color:#cbd5e1;
+
+    margin-bottom:30px;
+
+}
+
+.login-card input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    background:#f8fafc;
+
+    font-size:16px;
+
+}
+
+.login-card button{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(90deg,#4f46e5,#2563eb);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.login-card button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(79,70,229,.4);
+
+}
+
+#message{
+
+    color:white;
+
+    margin-top:20px;
+
+}
+/* Advisor Profile */
+
+.profile-container{
+
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f4f7fc;
+
+}
+
+.profile-card{
+
+    width:420px;
+    background:white;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+.profile-icon{
+
+    font-size:70px;
+    text-align:center;
+    margin-bottom:20px;
+
+}
+
+.profile-card h2{
+
+    text-align:center;
+    margin-bottom:30px;
+    color:#4f46e5;
+
+}
+
+.profile-item{
+
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid #e5e7eb;
+
+}
+
+.profile-item strong{
+
+    color:#374151;
+
+}
+
+.profile-item span{
+
+    color:#6b7280;
+
+}
+.forgot-container{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+}
+
+.forgot-card{
+    width:430px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+    text-align:center;
+}
+
+.lock-icon{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.forgot-card h2{
+    margin-bottom:30px;
+    font-weight:700;
+}
+
+.forgot-card input{
+    border-radius:12px;
+    padding:12px;
+}
+
+.forgot-card button{
+    border-radius:12px;
+    padding:12px;
+}

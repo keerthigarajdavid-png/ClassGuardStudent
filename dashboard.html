@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+    <title>ClassGuard Advisor</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+<div class="d-flex">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="sidebar">
+
+        <h3 class="logo">
+            <i class="fa-solid fa-shield-halved"></i>
+            ClassGuard
+        </h3>
+
+
+        <button class="menu-btn active">
+
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+
+        </button>
+
+
+        <button
+            class="menu-btn"
+            id="importBtn">
+
+            <i class="fa-solid fa-file-import"></i>
+            Import Students
+
+        </button>
+
+
+        <button
+            class="menu-btn"
+            onclick="window.location.href='timetable.html'">
+
+            <i class="fa-solid fa-calendar-days"></i>
+            Import Timetable
+
+        </button>
+
+
+        <input
+            type="file"
+            id="excelFile"
+            accept=".xlsx,.xls,.csv"
+            style="display:none">
+
+
+        <button
+            class="menu-btn"
+            id="studentListBtn">
+
+            <i class="fa-solid fa-users"></i>
+            Student List
+
+        </button>
+
+
+        
+<button class="menu-btn" id="searchStudentBtn" type="button">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    Search Student
+</button>
+
+
+
+        <button
+            class="menu-btn"
+            id="reportBtn">
+
+            <i class="fa-solid fa-file-lines"></i>
+            Attendance Report
+
+        </button>
+
+
+        <hr>
+
+
+        <button
+            class="menu-btn"
+            id="profileBtn">
+
+            <i class="fa-solid fa-user"></i>
+            Advisor Profile
+
+        </button>
+
+
+        <button
+            class="menu-btn"
+            id="forgotBtn">
+
+            <i class="fa-solid fa-key"></i>
+            Forgot Password
+
+        </button>
+
+
+        <button
+            class="menu-btn"
+            id="logoutBtn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+
+        </button>
+
+    </div>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <div class="content container-fluid">
+
+        <h2 class="mb-4">
+
+            Advisor Dashboard
+
+        </h2>
+
+
+        <!-- ================= STATISTICS ================= -->
+
+        <div class="row mb-4">
+
+            <div class="col-md-4">
+
+                <div class="card stat-card">
+
+                    <h3 id="totalCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Total Students
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card stat-card success">
+
+                    <h3 id="presentCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Present
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card stat-card danger">
+
+                    <h3 id="absentCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Absent
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= CLASS CONTROL ================= -->
+
+        <div class="card p-4">
+
+            <select
+                id="department"
+                class="form-select mb-3">
+
+                <option>
+                    Cyber Security
+                </option>
+
+                <option>
+                    CSE
+                </option>
+
+                <option>
+                    IT
+                </option>
+
+                <option>
+                    ECE
+                </option>
+
+            </select>
+
+
+            <div class="row">
+
+                <div class="col">
+
+                    <select
+                        id="year"
+                        class="form-select">
+
+                        <option>1</option>
+
+                        <option>2</option>
+
+                        <option selected>
+                            3
+                        </option>
+
+                        <option>4</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="col">
+
+                    <select
+                        id="section"
+                        class="form-select">
+
+                        <option>A</option>
+
+                        <option>B</option>
+
+                        <option>C</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <input
+                id="subject"
+                class="form-control mt-3"
+                placeholder="Subject">
+
+
+            <input
+                id="faculty"
+                class="form-control mt-3"
+                placeholder="Faculty Name">
+
+
+            <div class="row mt-4">
+
+                <div class="col">
+
+                    <button
+                        id="startBtn"
+                        class="btn btn-success w-100">
+
+                        Start Class
+
+                    </button>
+
+                </div>
+
+
+                <div class="col">
+
+                    <button
+                        id="stopBtn"
+                        class="btn btn-danger w-100">
+
+                        Stop Class
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="attendanceBtn"
+                class="btn btn-primary w-100 mt-3">
+
+                Mark Attendance
+
+            </button>
+
+
+            <!-- ================= TIMER ================= -->
+
+            <div class="row mt-4">
+
+                <div class="col-md-6">
+
+                    <div class="card timer-card">
+
+                        <h5>
+                            ⏱ Current Class Timer
+                        </h5>
+
+                        <h2 id="timer">
+                            00:00:00
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <div class="card active-card">
+
+                        <h5>
+                            Class Status
+                        </h5>
+
+                        <h3 id="activeStatus">
+
+                            🔴 No Active Class
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <p
+                id="status"
+                class="mt-3">
+            </p>
+
+        </div>
+
+
+ 
+
+            <hr>
+
+
+            <!-- Student status list -->
+
+            <div
+                id="studentPresenceList">
+
+                <div class="text-muted text-center p-3">
+
+                    Loading student status...
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= SCRIPTS ================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<script
+    src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js">
+</script>
+
+
+<script
+    type="module"
+    src="dashboard.js">
+</script>
+
+
+</body>
+
+</html>
